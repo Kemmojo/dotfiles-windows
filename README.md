@@ -19,6 +19,9 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 
 **Test Download command:**
 ```powershell
+$AllProtocols = [System.Net.SecurityProtocolType]'Tls11,Tls12'
+[System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
 Set-ExecutionPolicy RemoteSigned; `
 Invoke-WebRequest "http://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
 -OutFile "$HOME\Downloads\dotfiles-windows.zip"; `
