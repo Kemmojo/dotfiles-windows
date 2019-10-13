@@ -190,7 +190,7 @@ Start-Process powershell -ArgumentList "-command $installation_block"
 ################################
 ## Outro                      ##
 ################################
-echo
+echo ""
 echo "Windows now has all programs installed"
 echo "Execute the bootstrap-wsl.sh with alacritty in order to install the wsl-setup"s
-echo
+echo ""
