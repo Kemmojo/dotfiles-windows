@@ -20,7 +20,7 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 **Test Download command:**
 ```powershell
 Set-ExecutionPolicy RemoteSigned; `
-Invoke-WebRequest "https://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
+Invoke-WebRequest "http://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
 -OutFile "$HOME\Downloads\dotfiles-windows.zip"; `
 Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath "$HOME" -Force; `
 Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
@@ -30,7 +30,7 @@ Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
 **Real Download command:**
 ```powershell
 Set-ExecutionPolicy RemoteSigned; `
-Invoke-WebRequest "https://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
+Invoke-WebRequest "http://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
 -OutFile "$HOME\Downloads\dotfiles-windows.zip"; `
 Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath "$HOME" -Force; `
 Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
