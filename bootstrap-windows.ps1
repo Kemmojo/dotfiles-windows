@@ -1,6 +1,6 @@
 ## Welcome
 echo "Welcome to Kemojos Windows-Bootstrap Script"
-echo
+echo ""
 
 ######################
 ## PowerShell setup ##
