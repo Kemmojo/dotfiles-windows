@@ -1,5 +1,5 @@
 ## Welcome
-echo Welcome to Kemojos Windows-Bootstrap Script
+echo "Welcome to Kemojos Windows-Bootstrap Script"
 echo
 
 ######################
@@ -183,6 +183,6 @@ Start-Process powershell -ArgumentList "-command $installation_block"
 ## Outro                      ##
 ################################
 echo
-echo Windows now has all programs installed
-echo Execute the bootstrap-wsl.sh with alacritty in order to install the wsl-setup
+echo "Windows now has all programs installed"
+echo "Execute the bootstrap-wsl.sh with alacritty in order to install the wsl-setup"s
 echo
