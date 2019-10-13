@@ -7,7 +7,7 @@ echo
 ######################
 
 # Set execution policy to remote signed
-Set-ExecutionPolicy RemoteSigned
+# Set-ExecutionPolicy RemoteSigned
 
 # Set network category to private
 Set-NetConnectionProfile -NetworkCategory Private
@@ -17,7 +17,7 @@ Set-NetConnectionProfile -NetworkCategory Private
 ## Install choco.exelatey ##
 ############################
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://choco.exelatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 
 ########################
