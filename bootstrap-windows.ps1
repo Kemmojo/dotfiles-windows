@@ -145,25 +145,25 @@ choco.exe install texmaker -y
 ################################
 ## Install VS Code Extensions ##
 ################################
-$installation_block = {
-    $extensions =
-        'eamodio.gitlens',
-        'ms-vscode.csharp',
-        'ms-vscode.powershell',
-        'ms-vsliveshare.vsliveshare',
-        'PKief.material-icon-theme',
-        'ritwickdey.LiveServer',
-        'shd101wyy.markdown-preview-enhanced',
-        'sidneys1.gitconfig',
-        'Tyriar.sort-lines',
-        'VisualStudioExptTeam.vscodeintellicode',
-        'yycalm.linecount',
-        'zhuangtongfa.Material-theme'
-
-    for ($i = 0; $i -lt $extensions.Count; $i++) {
-        code --install-extension $extensions[$i]
-    }
-}
+#$installation_block = {
+#    $extensions =
+#        'eamodio.gitlens',
+#        'ms-vscode.csharp',
+#        'ms-vscode.powershell',
+#        'ms-vsliveshare.vsliveshare',
+#        'PKief.material-icon-theme',
+#        'ritwickdey.LiveServer',
+#        'shd101wyy.markdown-preview-enhanced',
+#        'sidneys1.gitconfig',
+#        'Tyriar.sort-lines',
+#        'VisualStudioExptTeam.vscodeintellicode',
+#        'yycalm.linecount',
+#        'zhuangtongfa.Material-theme'
+#
+#    for ($i = 0; $i -lt $extensions.Count; $i++) {
+#        code --install-extension $extensions[$i]
+#    }
+#}
 
 # Invoke new poweshell instance so code is in path
 Start-Process powershell -ArgumentList "-command $installation_block"
