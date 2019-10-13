@@ -10,7 +10,7 @@ echo
 # Set-ExecutionPolicy RemoteSigned
 
 # Set network category to private
-Set-NetConnectionProfile -NetworkCategory Private
+# Set-NetConnectionProfile -NetworkCategory Private
 
 
 ############################
