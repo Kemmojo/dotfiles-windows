@@ -13,9 +13,9 @@ Set-ExecutionPolicy RemoteSigned
 Set-NetConnectionProfile -NetworkCategory Private
 
 
-########################
+############################
 ## Install choco.exelatey ##
-########################
+############################
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://choco.exelatey.org/install.ps1'))
 
@@ -33,7 +33,7 @@ choco.exe install git-credential-manager-for-windows -y
 choco.exe install javaruntime -y
 choco.exe install java.jdk -y
 choco.exe install androidstudio -y
-choco.exe install postman
+choco.exe install postman -y
 
 # WSL ( Windows Subsystem for Linux )
 choco.exe install wsl-ubuntu-1804 -y
@@ -41,7 +41,6 @@ choco.exe install wsl-ubuntu-1804 -y
 # Browser
 choco.exe install firefox -y
 choco.exe install googlechrome -y
-choco.exe install googlechrome.canary -y
 choco.exe install opera -y
 
 # Essentials
@@ -117,6 +116,18 @@ choco.exe install virtualbox -y
 choco.exe install texmaker -y
 
 
+################################
+## Induvidual Installtions    ##
+################################
+
+# Flowkey
+# XING
+# FL Studio
+# iCUE
+# Alesis V61 Editor
+# Adobe Photoshop
+# Adobe XD
+
 
 ######################################
 ## Things to install without choco  ##
@@ -173,6 +184,5 @@ Start-Process powershell -ArgumentList "-command $installation_block"
 ################################
 echo
 echo Windows now has all programs installed
-echo Execute the bootstrap-wsl script with alacritty in order to install the wsl-setup
+echo Execute the bootstrap-wsl.sh with alacritty in order to install the wsl-setup
 echo
-

@@ -18,33 +18,109 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 5. Execute `sh bootstrap-wsl.sh ` in `alacritty.exe`
 
 **Download command:**
-
+```powershell
+Set-ExecutionPolicy RemoteSigned; `
+New-Item -Path "$HOME\dotfiles" -Type Directory; `
+Invoke-WebRequest "https://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
+-OutFile "$HOME\Downloads\dotfiles-windows.zip"; `
+Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath "$HOME\dotfiles" -Force; `
+Rename-Item -NewName "dotfiles-windows" -Path "$HOME\dotfiles\dotfiles-windows-master"; `
+. "$HOME\dotfiles\dotfiles-windows\remotetestscript.ps1"
+```
 
 # So what is getting installed?
-## Other
-- KeePass
+## Windows-Setup
+- **Fonts**
+    - firacode
+    - sourcecodepro
+- **Browser**
+    - Firefox
+    - Google Chrome
+    - Opera
+- **Essentials**
+    - Keepass
+    - 7zip
+    - 7zip.commandline
+    - Winrar
+    - Totalcommander
+    - Filezilla
+    - Rufus
+- **Multimedia**
+    - Youtube-dl
+    - Vlc
+    - Spotify
+- **Security**
+    - Malwarebytes
+- **Gaming & Communication**
+    - Battle.net
+    - Steam
+    - OBS-Studio
+    - Teamspeak
+    - Twitch-App
+    - Discord
+    - Whatsapp Desktop
+    - Epic Games Launcher
+- **Note taking**
+    - Joplin
+- **Mail-Client**
+    - Thunderbird
+- **Clouds**
+    - Dropbox
+    - Google Drive
+- **Office**
+    - libreoffice-fresh
+- **Torrenting**
+    - utorrent
+    - jdownloader
+- **Music development**
+    - Audacity
+- **PDF Reader**
+    - Adobe Acrobatreader
+- **Virtual Machines**
+    - Virtualbox
+- **Academic Paper creation**
+    - Texmaker
+- **Gamedevelopment**
+    - Unity
+    - Blender
+- **Developent**
+    - git
+    - git-credential-manager-for-windows
+    - Javaruntime
+    - Java Jdk
+    - Android Studio
+    - Postman
+- **Sysadmin**
+    - Teamviewer
+    - nmap
+    - Wireshark
+- **Editor & IDEs**
+    - Neovim
+    - Visual-Studio-Code
+    - Visual-Studio-Code-insiders
+    - Sublimetext3
+- **WSL ( Windows Subsystem for Linux )**
+    - WSL-Ubuntu-1804
+    - Alacritty
 
-## Development
-- WSL ( Windows Subsystem for Linux )
-    - Ubuntu ( for bash )
-    - Alacritty ( Graphicprocessor accellerated Terminal, written with Rust )
-- XAMPP ( Linux / Apache / MySQL / PHP / Perl )
+
+## Design Tools
+Unfortunatly Programs like **Photoshop**, or **Afinity Photo** are excluded
+from this setup, because their unavailable for free download.
+
+## WSL-Setup
+- LAMPP ( Linux / Apache / MySQL / PHP / Perl )
     - X-Debug
 - Node/NPM
     - Sass
     - Typescript
     - asd
 
-## Gaming
-- Twitch-App
-- Battle.net
-- Steam
-
 
 
 # Partitioning & Locations ( Recommandation )
 **Short Disclaimer:** I love organisation and hate to search my butt flat,
-So this Setup will consist of a subjective architecture, which might not hit your needs.
+So this Setup recommands a subjective architecture, which might not hit your needs.
 
 - **C:** (Place for: )
     - Windows per se
