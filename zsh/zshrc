@@ -1,0 +1,32 @@
+# ZSH PATH
+export ZSH=$HOME/.oh-my-zsh
+
+# The Theme
+ZSH_THEME=pygmalion
+
+# Plugins
+plugins=(
+    git
+    rails
+    ruby
+    colored-man-pages
+    colorize github
+    jira
+    vagrant
+    virtualenv
+    pip
+    python
+    brew
+    osx
+    zsh-completions
+    zsh-syntax-highlighting
+    zsh-dircolors-solarized
+    zsh-256color
+    solarized-man
+    zsh-autosuggestions
+)
+
+# Add env.sh
+source ~/.oh-my-env.sh
+
+source $ZSH/oh-my-zsh.sh

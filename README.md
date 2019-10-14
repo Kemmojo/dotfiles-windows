@@ -17,22 +17,12 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 4. Execute `bootstrap-windows.ps1` in `powershell.exe` as Admin
 5. Execute `sh bootstrap-wsl.sh ` in `alacritty.exe`
 
-**Test Download command:**
+**Download command:**
 ```powershell
+Set-ExecutionPolicy RemoteSigned; `
 $AllProtocols = [System.Net.SecurityProtocolType]'Tls11,Tls12'
 [System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
 [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
-Set-ExecutionPolicy RemoteSigned; `
-Invoke-WebRequest "http://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
--OutFile "$HOME\Downloads\dotfiles-windows.zip"; `
-Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath "$HOME" -Force; `
-Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
-. "$HOME\dotfiles\remotetestscript.ps1"
-```
-
-**Real Download command:**
-```powershell
-Set-ExecutionPolicy RemoteSigned; `
 Invoke-WebRequest "http://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
 -OutFile "$HOME\Downloads\dotfiles-windows.zip"; `
 Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath "$HOME" -Force; `
@@ -143,12 +133,5 @@ So this Setup recommands a subjective architecture, which might not hit your nee
 
 # Inspiration from ( Credit )
 - https://github.com/Nidzo-Vidic/windows-dotfiles/blob/master/Bootstrap.ps1
-
-
-
-
-
-
- 
 
 
