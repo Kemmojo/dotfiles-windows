@@ -36,6 +36,7 @@ choco.exe install androidstudio -y
 choco.exe install postman -y
 
 # WSL ( Windows Subsystem for Linux )
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 choco.exe install wsl-ubuntu-1804 -y
 
 # Browser
