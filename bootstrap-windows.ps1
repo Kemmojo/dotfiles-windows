@@ -44,7 +44,7 @@ choco.exe install googlechrome -y
 choco.exe install opera -y
 
 # Essentials
-choco.exe install alacritty -y
+choco.exe install conemu -y
 choco.exe install keepass -y
 choco.exe install 7zip -y
 choco.exe install 7zip.commandline -y
@@ -171,8 +171,6 @@ Start-Process powershell -ArgumentList "-command $installation_block"
 # .gitconfig
 # New-Item -Force -ItemType SymbolicLink $HOME\ -Name .gitconfig -Value $HOME\dev\windows-dotfiles\git\.gitconfig
 
-# ConEmu Settings
-# New-Item -Force -ItemType SymbolicLink $HOME\AppData\Roaming -Name ConEmu.xml -Value $HOME\dev\windows-dotfiles\ConEmu\ConEmu.xml
 
 ################################
 ## Outro                      ##
