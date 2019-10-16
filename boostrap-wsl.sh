@@ -9,6 +9,10 @@ NC='\033[0m' # No Color
 _base_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
+# Git
+sudo apt install git
+
+
 ## ZSH Setup
 
 # Oh-My_Zsh Installation
@@ -29,12 +33,17 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ### TODO: Symlink dotfiles
 
 
+# Node
+sudo apt install nodejs
+node install sass
+node install typescript
+node install webpack
+node install weback-cli
 
-## Alacritty Setup
+
+## Alacritty
+# TODO:
+
 ## Vim Setup
-
-
-
-
-
-
+sudo apt install neovim
+curl -sL https://raw.githubusercontent.com/Kemmojo/KemojoVim/master/boot-KemojoVim.sh | sh
