@@ -7,8 +7,6 @@ ZSH_THEME=agnoster
 # Plugins
 plugins=(
     git
-    rails
-    ruby
     colored-man-pages
     colorize github
     jira
@@ -16,8 +14,6 @@ plugins=(
     virtualenv
     pip
     python
-    brew
-    osx
     zsh-completions
     zsh-syntax-highlighting
     zsh-dircolors-solarized
