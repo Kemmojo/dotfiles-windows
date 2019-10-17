@@ -80,4 +80,5 @@ npm install -g webpack-cli
 echo ""
 echo "\n-----${RED} Install Neovim & KemmojoVim-Setup ${NC}-----"
 sudo apt install neovim
+echo "\n"
 curl -sL https://raw.githubusercontent.com/Kemmojo/KemojoVim/master/boot-KemojoVim.sh | sh
