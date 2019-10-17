@@ -61,17 +61,22 @@ echo "Symlink: oh-my-env" && ln -nf $HOME/dotfiles/zsh/oh-my-env.sh $HOME/.oh-my
 echo ""
 echo ""
 
+cd $HOME
 
 # Node
-echo "Install nodejs"
+echo "\n-----${RED} Install NodeJS / NPM / Basic Web development Packages ${NC}-----"
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install nodejs
-node install sass
-node install typescript
-node install webpack
-node install weback-cli
+sudo apt install npm
+npm install -g sass
+npm install -g typescript
+npm install -g webpack
+npm install -g weback-cli
 
 
 # Vim Setup
+echo ""
+echo "\n-----${RED} Install Neovim & KemmojoVim-Setup ${NC}-----"
 echo "Install Neovim and KemmojoVim-Setup"
 sudo apt install neovim
 curl -sL https://raw.githubusercontent.com/Kemmojo/KemojoVim/master/boot-KemojoVim.sh | sh
