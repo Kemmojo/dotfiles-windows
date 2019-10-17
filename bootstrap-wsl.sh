@@ -63,18 +63,15 @@ echo ""
 
 cd $HOME
 
-sudo chown -R $USER /usr/local
-sudo chown -R root /usr/local/share
-
 # Node
 echo "\n-----${RED} Install NodeJS / NPM / Basic Web development Packages ${NC}-----"
 sudo apt install nodejs
 sudo apt install npm
-mkdir -p /usr/local/lib/node_modules
-npm install -g sass
-npm install -g typescript
-npm install -g webpack
-npm install -g webpack-cli
+sudo mkdir -p /usr/local/lib/node_modules
+sudo npm install -g sass
+sudo npm install -g typescript
+sudo npm install -g webpack
+sudo npm install -g webpack-cli
 
 
 # Vim Setup
