@@ -8,12 +8,6 @@ ZSH_THEME=agnoster
 plugins=(
     git
     colored-man-pages
-    colorize github
-    jira
-    vagrant
-    virtualenv
-    pip
-    python
     zsh-completions
     zsh-syntax-highlighting
     zsh-dircolors-solarized
