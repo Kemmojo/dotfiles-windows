@@ -25,27 +25,27 @@ if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
   git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 fi
 
-if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
   echo "\n-----${RED} Install zsh-syntax-highlighting Plugin ${NC}-----"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
-if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-dircolors-solarized" ]; then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized" ]; then
   echo "\n-----${RED} Install zsh dir-colours plugin ${NC}-----"
   git clone --recursive -j8 git://github.com/joel-porquet/zsh-dircolors-solarized ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-dircolors-solarized
 fi
 
-if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-256color" ]; then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-256color" ]; then
   echo "\n-----${RED} Install 256color ZSH Plugin ${NC}-----"
   git clone https://github.com/chrissicool/zsh-256color ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-256color
 fi
 
-if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/solarized-man" ]; then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/solarized-man" ]; then
   echo "\n-----${RED} Install solarized-man ${NC}-----"
   git clone https://github.com/zlsun/solarized-man.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/solarized-man
 fi
 
-if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}plugins/zsh-autosuggestions" ]; then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
   echo "\n-----${RED} Install Autosuggestions ${NC}-----"
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}plugins/zsh-autosuggestions
 fi
