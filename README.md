@@ -20,6 +20,7 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 8. Install unzip `sudo apt install unzip`
 9. Execute `wget https://github.com/Kemmojo/dotfiles-windows/archive/master.zip && unzip master.zip && mv dotfiles-windows-master dotfiles && rm master.zip && cd dotfiles && sh bootstrap-wsl.sh`
 10. After **oh-my-zsh** installation, execute `sh $HOME/dotfiles/bootstrap-wsl.sh`
+11. Run `nvim`
 
 
 **Download command:**
