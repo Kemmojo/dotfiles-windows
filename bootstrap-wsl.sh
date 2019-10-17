@@ -68,7 +68,7 @@ echo "\n-----${RED} Install NodeJS / NPM / Basic Web development Packages ${NC}-
 sudo apt install nodejs
 sudo apt install npm
 sudo mkdir -p /usr/local/lib/node_modules
-sudo chown -R $USER /usr/local/lib/node_modules
+sudo chown -R $USER /usr/local/lib
 npm install -g sass
 npm install -g typescript
 npm install -g webpack
