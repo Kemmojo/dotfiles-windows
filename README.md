@@ -17,7 +17,9 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 5. Execute `bootstrap-windows.ps1` in `powershell.exe` as Admin
 6. Install Ubuntu from the Wnidows App Store
 7. Start Ubuntu
-8. Execute `cd $HOME/dotfiles && sh bootstrap-wsl.sh`
+8. Install unzip `sudo apt install unzip`
+9. Execute `wget https://github.com/Kemmojo/dotfiles-windows/archive/master.zip && unzip master.zip && mv dotfiles-windows-master dotfiles && rm master.zip && cd dotfiles && sh bootstrap-wsl.sh`
+
 
 **Download command:**
 ```powershell
