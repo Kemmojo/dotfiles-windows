@@ -7,7 +7,7 @@ echo ""
 ######################
 
 # Set execution policy to remote signed
-# Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy Bypass
 
 # Set network category to private
 # Set-NetConnectionProfile -NetworkCategory Private
@@ -77,6 +77,7 @@ choco.exe install malwarebytes -y
 choco.exe install battle.net -y
 choco.exe install steam -y
 choco.exe install obs-studio -y
+choco.exe install streamlabs-obs -y
 choco.exe install teamspeak -y
 choco.exe install twitch -y
 choco.exe install discord -y
@@ -177,6 +178,9 @@ Start-Process powershell -ArgumentList "-command $installation_block"
 ## Outro                      ##
 ################################
 echo ""
+echo "Things you have to install manually:"
+echo " - Twitch"
+echo " - Battle.net"
 echo "Windows now has all programs installed"
 echo "Execute the bootstrap-wsl.sh with alacritty in order to install the wsl-setup"s
 echo ""
