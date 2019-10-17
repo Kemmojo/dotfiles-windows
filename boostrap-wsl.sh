@@ -8,9 +8,14 @@ NC='\033[0m' # No Color
 # Home Directory
 _base_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Update Ubuntu
+sudo apt-get update
+
+# Install ZSH
+sudo apt-get install zsh
 
 # Git
-sudo apt install git
+sudo apt-get install git
 
 
 ## ZSH Setup
