@@ -37,7 +37,6 @@ choco.exe install postman -y
 
 # WSL ( Windows Subsystem for Linux )
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-choco.exe install wsl-ubuntu-1804 -y
 
 # Browser
 choco.exe install firefox -y
@@ -117,6 +116,11 @@ choco.exe install virtualbox -y
 # Academic Paper creation
 choco.exe install texmaker -y
 
+# Install Powerline Font
+cd $HOME/Downloads
+git clone https://github.com/powerline/fonts.git
+& .\fonts\install.ps1
+cd $HOME
 
 ################################
 ## Induvidual Installtions    ##
@@ -181,6 +185,17 @@ echo ""
 echo "Things you have to install manually:"
 echo " - Twitch"
 echo " - Battle.net"
+echo " - Flowkey"
+echo " - XING"
+echo " - FL Studio"
+echo " - iCUE"
+echo " - Alesis V61 Editor"
+echo " - Adobe Photoshop"
+echo " - Adobe XD"
+echo " - ISO Handling -> deamon tools lite"
+echo " - Adobe Cloude + Adobe XD"
+echo ""
+echo ""
 echo "Windows now has all programs installed"
 echo "Execute the bootstrap-wsl.sh with alacritty in order to install the wsl-setup"s
 echo ""
