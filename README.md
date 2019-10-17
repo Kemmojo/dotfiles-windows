@@ -106,7 +106,7 @@ Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
     - Sublimetext3
 - **WSL ( Windows Subsystem for Linux )**
     - WSL-Ubuntu-1804
-    - Alacritty
+    - ConEmu
 
 
 ## Design Tools
@@ -119,8 +119,8 @@ from this setup, because their unavailable for free download.
 - Node/NPM
     - Sass
     - Typescript
-    - asd
-
+    - webpack
+    - webpack-cli
 
 
 # Partitioning & Locations ( Recommandation )
