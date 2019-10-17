@@ -4,9 +4,8 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 # Before a fresh installtion 
 1. Check your personal files
 2. Store Passwords
-3. Check Browser settings nad bookmarker
+3. Check Browser settings and bookmarkes
 4. Backup your Game-setups & -settings & -profiles
-5. 
  
 
 # After a fresh installtion
@@ -16,7 +15,9 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 3. Go to ‘Settings’ -> ‘Update and Security’ -> ‘For developers’: Enable ‘Developer mode’
 4. Execute the download command below
 5. Execute `bootstrap-windows.ps1` in `powershell.exe` as Admin
-6. Execute `sh bootstrap-wsl.sh ` in `alacritty.exe`
+6. Install Ubuntu from the Wnidows App Store
+7. Start Ubuntu
+8. Execute `cd $HOME/dotfiles && sh bootstrap-wsl.sh`
 
 **Download command:**
 ```powershell
