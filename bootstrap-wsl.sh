@@ -5,23 +5,21 @@ set -e
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-# Home Directory
-_base_path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  # Update Ubuntu
+  sudo apt-get update
 
-# Update Ubuntu
-sudo apt-get update
+  # Install ZSH
+  sudo apt-get install zsh
 
-# Install ZSH
-sudo apt-get install zsh
+  # Git
+  sudo apt-get install git
 
-# Git
-sudo apt-get install git
+  ## ZSH Setup
+  # Oh-My_Zsh Installation
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
 
-
-## ZSH Setup
-
-# Oh-My_Zsh Installation
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 echo "\n-----${RED} Install zsh-completions ${NC}-----"
 git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 echo "\n-----${RED} Install zsh-syntax-highlighting Plugin ${NC}-----"
