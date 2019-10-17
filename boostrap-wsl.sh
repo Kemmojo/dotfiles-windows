@@ -36,6 +36,9 @@ echo "\n-----${RED} Install Autosuggestions ${NC}-----"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}plugins/zsh-autosuggestions
 
 ### TODO: Symlink dotfiles
+ln -nf $HOME/dotfiles/bashrc $HOME/.bashrc
+ln -nf $HOME/dotfiles/zshrc $HOME/.zshrc
+ln -nf $HOME/dotfiles/oh-my-env.sh $HOME/.oh-my-env.sh
 
 
 # Node
