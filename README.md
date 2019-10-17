@@ -19,10 +19,7 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 
 **Download command:**
 ```powershell
-Set-ExecutionPolicy RemoteSigned; `
-$AllProtocols = [System.Net.SecurityProtocolType]'Tls11,Tls12'
-[System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
-[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+Set-ExecutionPolicy Bypass; `
 Invoke-WebRequest "http://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
 -OutFile "$HOME\Downloads\dotfiles-windows.zip"; `
 Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath "$HOME" -Force; `
