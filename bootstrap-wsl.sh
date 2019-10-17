@@ -73,7 +73,7 @@ mkdir -p /usr/local/lib/node_modules
 npm install -g sass
 npm install -g typescript
 npm install -g webpack
-npm install -g weback-cli
+npm install -g webpack-cli
 
 
 # Vim Setup
