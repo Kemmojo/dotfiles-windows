@@ -13,9 +13,10 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 1. Update your System to the highest
 2. ( If Nvidia ) Download **[Nvidia Geforce Experience](https://www.geforce.com/geforce-experience/download)**
     - Install newest drivers
-3. Execute the download command below
-4. Execute `bootstrap-windows.ps1` in `powershell.exe` as Admin
-5. Execute `sh bootstrap-wsl.sh ` in `alacritty.exe`
+3. Go to ‘Settings’ -> ‘Update and Security’ -> ‘For developers’: Enable ‘Developer mode’
+4. Execute the download command below
+5. Execute `bootstrap-windows.ps1` in `powershell.exe` as Admin
+6. Execute `sh bootstrap-wsl.sh ` in `alacritty.exe`
 
 **Download command:**
 ```powershell
