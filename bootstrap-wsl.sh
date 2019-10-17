@@ -19,6 +19,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
+
 # ZSH Setup
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
   echo "\n-----${RED} Install zsh-completions ${NC}-----"
@@ -52,9 +53,14 @@ fi
 
 
 # Symlink dotfiles
+echo ""
+echo "\n-----${RED} Symlink Files ${NC}-----"
 echo "Symlink: bashrc" && ln -nf $HOME/dotfiles/zsh/bashrc $HOME/.bashrc
 echo "Symlink: zshrc" && ln -nf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 echo "Symlink: oh-my-env" && ln -nf $HOME/dotfiles/zsh/oh-my-env.sh $HOME/.oh-my-env.sh
+echo ""
+echo ""
+
 
 # Node
 echo "Install nodejs"
@@ -63,6 +69,7 @@ node install sass
 node install typescript
 node install webpack
 node install weback-cli
+
 
 # Vim Setup
 echo "Install Neovim and KemmojoVim-Setup"
