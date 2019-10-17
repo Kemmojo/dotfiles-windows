@@ -20,7 +20,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 # ZSH Setup
-if [ ! -d "~/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
   echo "\n-----${RED} Install zsh-completions ${NC}-----"
   git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 fi
