@@ -65,7 +65,6 @@ cd $HOME
 
 # Node
 echo "\n-----${RED} Install NodeJS / NPM / Basic Web development Packages ${NC}-----"
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install nodejs
 sudo apt install npm
 npm install -g sass
