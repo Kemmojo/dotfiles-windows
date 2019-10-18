@@ -96,19 +96,47 @@ rm dpkg -i bat_0.12.1_amd64.deb
 cd $HOME
 
 
+# Install fzf
+cd $HOME/Downloads
+wget https://github.com/junegunn/fzf-bin/releases/download/0.18.0/fzf-0.18.0-linux_amd64.tgz && tar -xzf fzf-0.18.0-linux_amd64.tgz
+sudo mv fzf /usr/local/bin
+rm fzf-0.18.0-linux_amd64.tgz
+
+
 # Install LAMP Setup
-# TODO: Finish LAMP + Composer + Laravel installation
+# TODO: Finish LAMP + Composer + Laravel installation + fancy-index
+## Install Base
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www"
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install tasksel
 sudo tasksel install lamp-server
-# Resources
-# - https://blog.devsense.com/2018/04/wsl
-# - https://www.itwriting.com/blog/10213-setting-up-php-for-development-on-windows-services-for-linux-in-windows-10.html
+sudo rm /var/www/html
+sudo ln -s "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www" /var/www/html
+
+## Install XDebug
 sudo apt-get install php-xdebug
-# Install Fance Index
+sudo bash -c "echo '[XDebug]' >> /etc/php/7.2/apache2/php.ini"
+sudo bash -c "echo 'xdebug.remote_enable = 1' >> /etc/php/7.2/apache2/php.ini"
+sudo bash -c "echo 'xdebug.remote_autostart = 1' >> /etc/php/7.2/apache2/php.ini"
+
+## Install Fance Index
+cd /var/www/html && git clone https://github.com/Vestride/fancy-index.git
+sudo mv fancy-index/.htaccess /var/www/html
+sudo bash -c "echo '<Directory /var/www/html/>' >> /etc/apache2/apache2.conf"
+sudo bash -c "echo '    AllowOverride All' >> /etc/apache2/apache2.conf"
+sudo bash -c "echo '    Options Indexes MultiViews FollowSymLinks' >> /etc/apache2/apache2.conf"
+sudo bash -c "echo '    Require all granted' >> /etc/apache2/apache2.conf"
+sudo bash -c "echo '</Directory>' >> /etc/apache2/apache2.conf"
+
+
+## Composer
+
+
+
+## Laravel
+
 
 
 # TODO: Create IF questions of every action done in this script
