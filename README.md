@@ -111,8 +111,6 @@ Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
     - Visual-Studio-Code
     - Visual-Studio-Code-insiders
     - Sublimetext3
-- **WSL ( Windows Subsystem for Linux )**
-    - ConEmu
 
 
 ## Design Tools
@@ -120,12 +118,21 @@ Unfortunatly Programs like **Photoshop**, or **Afinity Photo** are excluded
 from this setup, because their unavailable for free download.
 
 ## WSL-Setup
-# TODO: Hier alles verlinken!
-# TODO: Install LAMP + Composer + Laravel
+- ConEmu
 - ZSH
-- oh-my-zsh
+    - oh-my-zsh
+        - zsh-completions
+        - zsh-syntax-highlighting
+        - zsh-dircolors-solarized
+        - zsh-256color
+        - solarized-man
+        - zsh-autosuggestions
+    - bat
+    - fzf
 - Neovim + KemmojoVim (My personal setup)
-- LAMPP ( Linux / Apache / MySQL / PHP / Perl )
+- LAMP ( Linux / Apache / MySQL / PHP )
+    - php@7.2
+    - fancy-index
     - X-Debug
     - Composer
     - Laravel
