@@ -104,7 +104,7 @@ prompt "Install Bat (Cat with Wings)"
 mkdir -p $HOME/Downloads && cd $HOME/Downloads/
 wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
 sudo dpkg -i bat_0.12.1_amd64.deb
-rm dpkg -i bat_0.12.1_amd64.deb
+rm bat_0.12.1_amd64.deb
 cd $HOME
 
 
