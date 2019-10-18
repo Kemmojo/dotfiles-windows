@@ -17,7 +17,7 @@ cd $HOME
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   # Update Ubuntu
-  sudo apt-get update
+  #sudo apt-get update
 
   # Install 
   prompt "Install ZSH"
@@ -123,7 +123,7 @@ prompt "Install Lamp-Server"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www"
-sudo apt-get update && sudo apt-get upgrade
+# sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install tasksel
 sudo tasksel install lamp-server
 sudo rm /var/www/html
