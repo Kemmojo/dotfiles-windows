@@ -150,8 +150,6 @@ cd $HOME
 ################################
 ## Install VS Code Extensions ##
 ################################
-# TODO: Get some more here and save your dotfiles
-# - Emmet
 $installation_block = {
     $extensions =
         'yzhang.markdown-all-in-one',
