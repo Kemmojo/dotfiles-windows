@@ -150,4 +150,4 @@ So this Setup recommands a subjective architecture, which might not hit your nee
 # Inspiration from ( Credit )
 - https://github.com/Nidzo-Vidic/windows-dotfiles/blob/master/Bootstrap.ps1
 
-
+# TODO: Write down Information about how the Webserver works and what you can do

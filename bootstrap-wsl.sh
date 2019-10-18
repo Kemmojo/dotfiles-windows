@@ -97,6 +97,7 @@ cd $HOME
 
 
 # Install LAMP Setup
+# TODO: Finish LAMP + Composer + Laravel installation
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www"
