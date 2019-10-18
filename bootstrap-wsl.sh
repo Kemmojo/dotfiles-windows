@@ -13,6 +13,7 @@ prompt() {
   echo "\n\n-----${GREEN} ${1} ${NC}-----"
 }
 
+cd $HOME
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   # Update Ubuntu
