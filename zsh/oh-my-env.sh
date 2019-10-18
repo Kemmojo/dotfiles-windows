@@ -1,18 +1,18 @@
  #!/bin/zsh
 
-# ----- Owner ------------------------------------------------------------------
-    export USER_NAME="WhoAreYou"
-
 # ----- Exports ----------------------------------------------------------------
-
+    export WINHOME="/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')"
 
 # ----- Aliases ----------------------------------------------------------------
 
-    # ----------- Instantcall Config Files --------------------------------
-    # Use mvimimetext for editing config files
-    alias zshconfig="mvim ~/.zshrc"
-    alias envconfig="mvim ~/.oh-my-env.sh"
-    # ----------- Reload zsh Shell -----------------------------------------
+    # ----------- Instantcall Config Files ------------------------------------
+    # Use nvim for editing config files and directories
+    alias zshconfig="nvim ~/.zshrc"
+    alias envconfig="nvim ~/.oh-my-env.sh"
+    alias vimconfig="nvim ~/.KemojoVim"
+    alias dotconfig="nvim ~/dotfiles"
+
+    # ----------- Reload zsh Shell --------------------------------------------
     alias zshreload="source ~/.zshrc"
 
     # ----------- Override BSD grep with GNU equivalent -------
@@ -23,10 +23,23 @@
     alias v="nvim"
     alias oldvim="\vim"
 
+    # ----------- Cat -> Bat (Cat with Wings) -------
+    alias cat="bat"
+
 
 # ----- Functions -------------------------------------------------------------
 
+    # ------FileSearch --------------------------------------------------------
+        function f() { find . -iname "*$1*" ${@:2} }
+        function f-dir { find . -type d -iname "*$1*" ${@:2} }
+        function r() { grep "$1" ${@:2} -R . --color=always}
+
+    # ------Webserver --------------------------------------------------------
+        function webserver-start() { sudo service mysql start && sudo service apache2 start }
+        function webserver-stop() { sudo service mysql stop && sudo service apache2 stop }
+        function webserver-restart() { sudo service mysql restart && sudo service apache2 restart }
 
 
-# ----- Notes -------------------------------------------------------------------
 
+# ----- Notes -----------------------------------------------------------------
+    # Someday write a "envhelp", which prints information about every function in this setup

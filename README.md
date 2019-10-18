@@ -10,20 +10,28 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 
 # After a fresh installtion
 1. Update your System to the highest
-2. ( If Nvidia ) Download **[Nvidia Geforce Experience](https://www.geforce.com/geforce-experience/download)**
+2. ( If **Nvidia** ) Download **[Nvidia Geforce Experience](https://www.geforce.com/geforce-experience/download)**
     - Install newest drivers
 3. Go to ‘Settings’ -> ‘Update and Security’ -> ‘For developers’: Enable ‘Developer mode’
-4. Execute the download command below
+4. Execute the **Windows Download & Execute bootstrap command** below
 5. Execute `bootstrap-windows.ps1` in `powershell.exe` as Admin
-6. Install Ubuntu from the Wnidows App Store
-7. Start Ubuntu
+6. Install **Ubuntu** from the **Microsoft App**
+7. Start **ConEmu**
+    1. Make sure the **Command** textbox contains something simular to this:
+        - ```set "PATH=%ConEmuBaseDirShort%\wsl;%PATH%" & %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -cur_console:pm:/mnt```
+    2. The Ubuntu bash shell should be started
+        - If not, follow the following guide: https://conemu.github.io/en/BashOnWindows.html
+    3. Change to **HOME** directory `cd $HOME`
 8. Install unzip `sudo apt install unzip`
 9. Execute `wget https://github.com/Kemmojo/dotfiles-windows/archive/master.zip && unzip master.zip && mv dotfiles-windows-master dotfiles && rm master.zip && cd dotfiles && sh bootstrap-wsl.sh`
-10. After **oh-my-zsh** installation, execute `sh $HOME/dotfiles/bootstrap-wsl.sh`
-11. Run `nvim`
+10. If you are beeing asked, to change the **default shell**, confirm with `y[Yes]` and `Enter`
+11. After **oh-my-zsh** installation, execute `sh $HOME/dotfiles/bootstrap-wsl.sh`
+12. Run `nvim`, if the setup seems stuck, type `:q` to exit, and again to exit out of **neovim**
+13. Restart **ConEmu** and check which shell you are using by default via `ps -p $$`, if it says `zsh` everything is fine
+14. asd
 
 
-**Download command:**
+**Windows Download & Execute bootstrap command**
 ```powershell
 Set-ExecutionPolicy Bypass; `
 Invoke-WebRequest "http://github.com/Kemmojo/dotfiles-windows/archive/master.zip" `
@@ -47,7 +55,6 @@ Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
     - 7zip
     - 7zip.commandline
     - Winrar
-    - Totalcommander
     - Filezilla
     - Rufus
 - **Multimedia**
@@ -57,14 +64,14 @@ Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
 - **Security**
     - Malwarebytes
 - **Gaming & Communication**
-    - Battle.net
     - Steam
     - OBS-Studio
+    - Streamlabs OBS
     - Teamspeak
-    - Twitch-App
     - Discord
     - Whatsapp Desktop
     - Epic Games Launcher
+    - Origin Launcher
 - **Note taking**
     - Joplin
 - **Mail-Client**
@@ -105,7 +112,6 @@ Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
     - Visual-Studio-Code-insiders
     - Sublimetext3
 - **WSL ( Windows Subsystem for Linux )**
-    - WSL-Ubuntu-1804
     - ConEmu
 
 
@@ -114,8 +120,15 @@ Unfortunatly Programs like **Photoshop**, or **Afinity Photo** are excluded
 from this setup, because their unavailable for free download.
 
 ## WSL-Setup
+# TODO: Hier alles verlinken!
+# TODO: Install LAMP + Composer + Laravel
+- ZSH
+- oh-my-zsh
+- Neovim + KemmojoVim (My personal setup)
 - LAMPP ( Linux / Apache / MySQL / PHP / Perl )
     - X-Debug
+    - Composer
+    - Laravel
 - Node/NPM
     - Sass
     - Typescript

@@ -13,6 +13,12 @@ Set-ExecutionPolicy Bypass
 # Set-NetConnectionProfile -NetworkCategory Private
 
 
+#########################################
+## WSL ( Windows Subsystem for Linux ) ##
+#########################################
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+
 ############################
 ## Install choco.exelatey ##
 ############################
@@ -35,9 +41,6 @@ choco.exe install java.jdk -y
 choco.exe install androidstudio -y
 choco.exe install postman -y
 
-# WSL ( Windows Subsystem for Linux )
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-
 # Browser
 choco.exe install firefox -y
 choco.exe install googlechrome -y
@@ -49,7 +52,6 @@ choco.exe install keepass -y
 choco.exe install 7zip -y
 choco.exe install 7zip.commandline -y
 choco.exe install winrar -y
-choco.exe install totalcommander -y
 choco.exe install filezilla -y
 choco.exe install rufus -y
 
@@ -73,15 +75,15 @@ choco.exe install spotify -y
 choco.exe install malwarebytes -y
 
 # Gaming & Communication
-choco.exe install battle.net -y
 choco.exe install steam -y
+choco.exe install epicgameslauncher -y
+choco.exe install origin -y
 choco.exe install obs-studio -y
 choco.exe install streamlabs-obs -y
 choco.exe install teamspeak -y
 choco.exe install twitch -y
 choco.exe install discord -y
 choco.exe install whatsapp -y
-choco.exe install epicgameslauncher -y
 
 # Note taking
 choco.exe install joplin -y
@@ -141,25 +143,96 @@ cd $HOME
 ## Windows Settings           ##
 ################################
 # Accellerate curosr speed
+#   1. Windows -> Control Panel -> Keyboard -> Character repeat delay -> fast
+#   2. Windows -> Registry editor -> HKEY_CURRENT_USER -> Control Panel -> Keyboard -> KeyboardSpeed -> 60
 
 
 ################################
 ## Install VS Code Extensions ##
 ################################
+# TODO: Get some more here and save your dotfiles
+# - Emmet
 $installation_block = {
     $extensions =
-        'eamodio.gitlens',
-        'ms-vscode.csharp',
-        'ms-vscode.powershell',
-        'ms-vsliveshare.vsliveshare',
-        'PKief.material-icon-theme',
-        'ritwickdey.LiveServer',
+        'yzhang.markdown-all-in-one',
+        'mrmlnc.vscode-apache',
+        'eiminsasete.apacheconf-snippets',
+        'formulahendry.auto-rename-tag',
+        'hnw.vscode-auto-open-markdown-preview',
+        'luggage66.awk',
+        'mgmcdermott.vscode-language-babel',
+        'hookyqr.beautify',
+        'wwm.better-align',
+        'coenraads.bracket-pair-colorizer',
+        'demijollamaxime.bulma',
+        'formulahendry.code-runner',
+        'bierner.color-info',
+        'anseki.vscode-color',
+        'alexdima.copy-relative-path',
+        'pranaygp.vscode-css-peek',
+        'ms-azuretools.vscode-docker',
+        'mikestead.dotenv',
+        'vilicvane.es-quotes',
+        'vincaslt.highlight-matching-tag',
+        'sidthesloth.html5-boilerplate',
+        'mkaufman.htmlhint',
+        'bradgashler.htmltagwrap',
+        'zignd.html-css-class-completion',
+        'xabikos.javascriptsnippets',
+        'redhat.java',
+        'austenc.laravel-blade-spacer',
+        'codingyu.laravel-goto-view',
+        'cjhowe7.laravel-blade',
+        'stef-k.laravel-goto-controller',
+        'bierner.markdown-emoji',
+        'bat67.markdown-extension-pack',
+        'yzane.markdown-pdf',
         'shd101wyy.markdown-preview-enhanced',
+        'bierner.markdown-preview-github-styles',
+        'mdickin.markdown-shortcuts',
+        'darkriszty.markdown-table-prettify',
+        'alanwalk.markdown-toc',
+        'goessner.mdmath',
+        'davidanson.vscode-markdownlint',
+        'leizongmin.node-module-intellisense',
+        'christian-kohler.npm-intellisense',
+        'whizkydee.material-palenight-theme',
+        'christian-kohler.path-intellisense',
+        'felixfbecker.php-debug',
+        'felixfbecker.php-pack',
+        'sophisticode.php-formatter',
+        'felixfbecker.php-intellisense',
+        'kokororin.vscode-phpfmt',
+        'esbenp.prettier-vscode',
+        'kogai.regex-railroad-diagrams',
+        'robinbentley.sass-indented',
+        'shan.code-settings-sync',
+        'kyleetehkitty.starboundjson',
+        'henoc.svgeditor',
+        'cssho.vscode-svgviewer',
+        'wayou.vscode-todo-highlight',
+        'minhthai.vscode-todo-parser',
+        'britesnow.vscode-toggle-quotes',
+        'ilich8086.untabify',
+        'deerawan.vscode-faker',
+        'tomoki1207.pdf',
+        'jrebocho.vscode-random',
+        'sdras.vue-vscode-extensionpack',
+        'sdras.vue-vscode-snippets',
+        'gamunu.vscode-yarn',
+        'samverschueren.yo',
+        'ms-vscode.csharp',
+        'ms-python.python',
+        'ms-vscode.powershell',
+        'ms-mssql.mssql',
+        'ms-vsliveshare.vsliveshare',
+        'pkief.material-icon-theme',
+        'ritwickdey.LiveServer',
         'sidneys1.gitconfig',
         'Tyriar.sort-lines',
         'VisualStudioExptTeam.vscodeintellicode',
         'yycalm.linecount',
-        'zhuangtongfa.Material-theme'
+        'equinusocio.vsc-material-theme'
 
     for ($i = 0; $i -lt $extensions.Count; $i++) {
         code --install-extension $extensions[$i]
@@ -170,17 +243,10 @@ $installation_block = {
 Start-Process powershell -ArgumentList "-command $installation_block"
 
 
-###########################
-## Create symbolik links ##
-###########################
-
-# .gitconfig
-# New-Item -Force -ItemType SymbolicLink $HOME\ -Name .gitconfig -Value $HOME\dev\windows-dotfiles\git\.gitconfig
-
-
 ################################
 ## Outro                      ##
 ################################
+# TODO: Download Applications from Sources
 echo ""
 echo "Things you have to install manually:"
 echo " - Twitch"
@@ -197,5 +263,5 @@ echo " - Adobe Cloude + Adobe XD"
 echo ""
 echo ""
 echo "Windows now has all programs installed"
-echo "Execute the bootstrap-wsl.sh with alacritty in order to install the wsl-setup"s
+echo "Go back to the dotfiles repository and follow the rest of the installation guide.
 echo ""
