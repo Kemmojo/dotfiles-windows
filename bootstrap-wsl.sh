@@ -3,7 +3,14 @@ set -e
 
 # Print No Color
 RED='\033[0;31m'
+GREEN='\033[0;32m'
 NC='\033[0m' # No Color
+
+# Promp function
+prompt() {
+  echo "\n\n-----${GREEN} ${1} ${NC}-----"
+}
+
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   # Update Ubuntu
@@ -22,7 +29,7 @@ fi
 
 # ZSH Setup
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
-  echo "\n-----${RED} Install zsh-completions ${NC}-----"
+  prompt "Install zsh-completions"
   git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 fi
 
@@ -97,6 +104,8 @@ cd $HOME
 
 
 # Install fzf
+echo ""
+echo "\n-----${RED} Install fzf ${NC}-----"
 cd $HOME/Downloads
 wget https://github.com/junegunn/fzf-bin/releases/download/0.18.0/fzf-0.18.0-linux_amd64.tgz && tar -xzf fzf-0.18.0-linux_amd64.tgz
 sudo mv fzf /usr/local/bin
@@ -106,6 +115,8 @@ rm fzf-0.18.0-linux_amd64.tgz
 # Install LAMP Setup
 # TODO: Finish LAMP + Composer + Laravel installation + fancy-index
 ## Install Base
+echo ""
+echo "\n-----${RED} Install Lamp-Server ${NC}-----"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev"
 mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www"
@@ -116,14 +127,18 @@ sudo rm /var/www/html
 sudo ln -s "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www" /var/www/html
 
 ## Install XDebug
+echo ""
+echo "\n-----${RED} Install PHP-XDebug ${NC}-----"
 sudo apt-get install php-xdebug
 sudo bash -c "echo '[XDebug]' >> /etc/php/7.2/apache2/php.ini"
 sudo bash -c "echo 'xdebug.remote_enable = 1' >> /etc/php/7.2/apache2/php.ini"
 sudo bash -c "echo 'xdebug.remote_autostart = 1' >> /etc/php/7.2/apache2/php.ini"
 
 ## Install Fance Index
+echo ""
+echo "\n-----${RED} Install Fancy-Index ${NC}-----"
 cd /var/www/html && git clone https://github.com/Vestride/fancy-index.git
-sudo mv fancy-index/.htaccess /var/www/html
+sudo mv /var/www/html/fancy-index/.htaccess /var/www/html
 sudo bash -c "echo '<Directory /var/www/html/>' >> /etc/apache2/apache2.conf"
 sudo bash -c "echo '    AllowOverride All' >> /etc/apache2/apache2.conf"
 sudo bash -c "echo '    Options Indexes MultiViews FollowSymLinks' >> /etc/apache2/apache2.conf"
@@ -132,11 +147,13 @@ sudo bash -c "echo '</Directory>' >> /etc/apache2/apache2.conf"
 
 
 ## Composer
-
+echo ""
+echo "\n-----${RED} Install Composer ${NC}-----"
 
 
 ## Laravel
-
+echo ""
+echo "\n-----${RED} Install Laravel ${NC}-----"
 
 
 # TODO: Create IF questions of every action done in this script
