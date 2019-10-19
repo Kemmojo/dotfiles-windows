@@ -78,6 +78,7 @@ choco.exe install malwarebytes -y
 choco.exe install steam -y
 choco.exe install epicgameslauncher -y
 choco.exe install origin -y
+choco.exe install leagueoflegends -y
 choco.exe install obs-studio -y
 choco.exe install streamlabs-obs -y
 choco.exe install teamspeak -y
