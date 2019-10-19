@@ -1,12 +1,14 @@
  #!/bin/zsh
 
 # ----- PATH ----------------------------------------------------------------
+    # PHP-Composer
     export PATH=$HOME/.config/composer/vendor/bin:$PATH
-
+    
 
 # ----- Exports ----------------------------------------------------------------
-    export WINHOME="/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')"
-    export CODEENV="/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code"
+    export WINUSERNAME="$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')"
+    export WINHOME="/mnt/c/Users/$WINUSERNAME"
+    export CODEENV="/mnt/c/Users/$WINUSERNAME/Code"
 
 
 # ----- Source ----------------------------------------------------------------

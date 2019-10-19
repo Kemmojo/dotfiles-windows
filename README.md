@@ -28,7 +28,6 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 11. After **oh-my-zsh** installation, execute `sh $HOME/dotfiles/bootstrap-wsl.sh`
 12. Run `nvim`, if the setup seems stuck, type `:q` to exit, and again to exit out of **neovim**
 13. Restart **ConEmu** and check which shell you are using by default via `ps -p $$`, if it says `zsh` everything is fine
-14. For dircolors execute `setupsolarized`
 
 
 **Windows Download & Execute bootstrap command**
@@ -40,6 +39,10 @@ Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath
 Rename-Item -NewName "dotfiles" -Path "$HOME\dotfiles-windows-master"; `
 . "$HOME\dotfiles\bootstrap-windows.ps1"
 ```
+
+## Finishing moves
+1. For dircolors execute `setupsolarized`
+
 
 # So what is getting installed?
 ## Windows-Setup
@@ -118,8 +121,8 @@ Unfortunatly Programs like **Photoshop**, or **Afinity Photo** are excluded
 from this setup, because their unavailable for free download.
 
 ## WSL-Setup
-- ConEmu
-- ZSH
+- **ConEmu**
+- **ZSH**
     - oh-my-zsh
         - zsh-completions
         - zsh-syntax-highlighting
@@ -129,14 +132,14 @@ from this setup, because their unavailable for free download.
         - zsh-autosuggestions
     - bat
     - fzf
-- Neovim + KemmojoVim (My personal setup)
-- LAMP ( Linux / Apache / MySQL / PHP )
+- **Neovim + KemmojoVim (My personal setup)**
+- **LAMP ( Linux / Apache / MySQL / PHP )**
     - php@7.2
     - fancy-index
     - X-Debug
     - Composer
     - Laravel
-- Node/NPM
+- **Node/NPM**
     - Sass
     - Typescript
     - webpack
@@ -149,7 +152,8 @@ So this Setup recommands a subjective architecture, which might not hit your nee
 
 - **C:** (Place for: )
     - Windows per se
-    - WSL + Development Environment
+    - **Development Environment:** User/Code
+    - **WebServer Root** User/Code/Webdev/www
 - **D:** ( Thirdparty Software/Apps/Programs )
 - **E:** ( Gaming )
 
