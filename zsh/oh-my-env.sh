@@ -22,10 +22,10 @@
 
     # ----------- Instantcall Config Files -------------------------------------
     # Use nvim for editing config files and directories
-    alias zshconfig="nvim ~/.zshrc"
-    alias envconfig="nvim ~/.oh-my-env.sh"
-    alias vimconfig="nvim ~/.KemojoVim"
-    alias dotconfig="nvim ~/dotfiles"
+    alias zshconfig="code ~/.zshrc"
+    alias envconfig="code ~/.oh-my-env.sh"
+    alias vimconfig="code ~/.KemojoVim"
+    alias dotconfig="code ~/dotfiles"
 
     # ----------- Reload zsh Shell ---------------------------------------------
     alias zshreload="source ~/.zshrc"
@@ -40,6 +40,9 @@
 
     # ----------- Cat -> Bat (Cat with Wings) ----------------------------------
     alias cat="bat"
+    
+    # ----------- Node / NPM ----------------------------------
+    alias npm="sudo npm"
 
 
 # ----- Functions --------------------------------------------------------------

@@ -64,6 +64,8 @@ if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
+# Invoke ls colors
+
 
 # Symlink dotfiles
 prompt "Symlink Dotfiles"
@@ -85,6 +87,7 @@ sudo npm install -g sass
 sudo npm install -g typescript
 sudo npm install -g webpack
 sudo npm install -g webpack-cli
+sudo npm install -g @vue/cli
 
 
 # Install Neovim + Setup KemmojoVim

@@ -28,6 +28,7 @@ Windoof, if something breaks and you need to reinstall, take my Setting, i will 
 11. After **oh-my-zsh** installation, execute `sh $HOME/dotfiles/bootstrap-wsl.sh`
 12. Run `nvim`, if the setup seems stuck, type `:q` to exit, and again to exit out of **neovim**
 13. Restart **ConEmu** and check which shell you are using by default via `ps -p $$`, if it says `zsh` everything is fine
+14. For dircolors execute `setupsolarized`
 
 
 **Windows Download & Execute bootstrap command**
