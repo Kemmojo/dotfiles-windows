@@ -126,7 +126,7 @@ mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | 
 # sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install tasksel
 sudo tasksel install lamp-server
-sudo rm /var/www/html
+sudo rm -R /var/www/html
 sudo ln -s "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www" /var/www/html
 sudo apt-get install php-zip
 
