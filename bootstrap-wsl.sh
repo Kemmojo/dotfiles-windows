@@ -83,7 +83,7 @@ if [ ! -f "$HOME/dotfiles/zsh/oh-my-env.sh $HOME/.oh-my-env.sh" ]; then
   ## Development Directories
   echo "Create: ${GREEN}$WINDOWS_HOME/Code${NC}" && mkdir -p "$WINDOWS_HOME/Code"
   echo "Create: ${GREEN}$WINDOWS_HOME/Code/Webdev${NC}" && mkdir -p "$WINDOWS_HOME/Code/Webdev"
-  echo "Create: ${GREEN}$WINDOWS_HOME/Code/Webdev/www" && mkdir -p "$WINDOWS_HOME/Code/Webdev/www"
+  echo "Create: ${GREEN}$WINDOWS_HOME/Code/Webdev/www${NC}" && mkdir -p "$WINDOWS_HOME/Code/Webdev/www"
   echo "Create: ${GREEN}$WINDOWS_HOME/Code/Windev${NC}" && mkdir -p "$WINDOWS_HOME/Code/Windev"
   echo "Create: ${GREEN}$WINDOWS_HOME/Code/Mobildev${NC}" && mkdir -p "$WINDOWS_HOME/Code/Mobildev"
   echo "Create: ${GREEN}$WINDOWS_HOME/Code/CLIdev${NC}" && mkdir -p "$WINDOWS_HOME/Code/CLIdev"
@@ -93,10 +93,10 @@ if [ ! -f "$HOME/dotfiles/zsh/oh-my-env.sh $HOME/.oh-my-env.sh" ]; then
   echo "Create: ${GREEN}/usr/local/lib/node_modules${NC}" && sudo mkdir -p /usr/local/lib/node_modules
 
   ## Symlinks
-  echo "Symlink: bashrc" && ln -nf $HOME/dotfiles/zsh/bashrc $HOME/.bashrc
-  echo "Symlink: zshrc" && ln -nf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
-  echo "Symlink: oh-my-env" && ln -nf $HOME/dotfiles/zsh/oh-my-env.sh $HOME/.oh-my-env.sh
-  echo "Symlink: gitconfig" && ln -nf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
+  echo "Symlink: ${GREEN}bashrc${NC}" && ln -nf $HOME/dotfiles/zsh/bashrc $HOME/.bashrc
+  echo "Symlink: ${GREEN}zshrc${NC}" && ln -nf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
+  echo "Symlink: ${GREEN}oh-my-env${NC}" && ln -nf $HOME/dotfiles/zsh/oh-my-env.sh $HOME/.oh-my-env.sh
+  echo "Symlink: ${GREEN}gitconfig${NC}" && ln -nf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
   echo "\n"
   cd $HOME
 fi
