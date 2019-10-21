@@ -1,7 +1,11 @@
 #!/bin/sh
 set -e
 
-# TODO: Create IF questions of every action done in this script
+# TODOs:
+## TODO: Get PHP Variable, for Versioning
+
+# Global Vars
+WINDOWSUSER="$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')"
 
 # Print No Color
 RED='\033[0;31m'
@@ -10,24 +14,28 @@ NC='\033[0m' # No Color
 
 # Promp function
 prompt() {
-  echo "\n\n-----${GREEN} ${1} ${NC}-----"
+  echo "\n\n# ------ ${GREEN} ${1} ${NC} ----------------------------------------------------"
 }
 
-cd $HOME
 
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  # Update Ubuntu
-  #sudo apt-get update
+
+# Update Ubuntu
+cd $HOME
+sudo apt-get update
 
   # Install 
+if ! [ -x "$(command -v zsh)" ]; then
   prompt "Install ZSH"
   sudo apt-get install zsh
-
+fi
   # Git
+if ! [ -x "$(command -v git)" ]; then
   prompt "Install Git"
   sudo apt-get install git
+fi
   
   # Oh-My_Zsh Installation
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
   prompt "Install oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
@@ -36,53 +44,69 @@ fi
 # ZSH Setup
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
   prompt "Install zsh-completions"
-  git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+  git clone https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
   prompt "Install zsh-syntax-highlighting Plugin"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized" ]; then
   prompt "Install zsh dir-colours plugin"
-  git clone --recursive -j8 git://github.com/joel-porquet/zsh-dircolors-solarized ~/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized
+  git clone --recursive -j8 git://github.com/joel-porquet/zsh-dircolors-solarized $HOME/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-256color" ]; then
   prompt "Install 256color ZSH Plugin"
-  git clone https://github.com/chrissicool/zsh-256color ~/.oh-my-zsh/custom/plugins/zsh-256color
+  git clone https://github.com/chrissicool/zsh-256color $HOME/.oh-my-zsh/custom/plugins/zsh-256color
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/solarized-man" ]; then
   prompt "Install solarized-man"
-  git clone https://github.com/zlsun/solarized-man.git ~/.oh-my-zsh/custom/plugins/solarized-man
+  git clone https://github.com/zlsun/solarized-man.git $HOME~/.oh-my-zsh/custom/plugins/solarized-man
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
   prompt "Install Autosuggestions"
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
 # Invoke ls colors
 
 
 # Symlink dotfiles
-prompt "Symlink Dotfiles"
+prompt "Create Directories & Symlink Dotfiles"
+## Home Directories
+echo "Create: ${GREEN}$HOME/Downloads${NC}" && mkdir -p $HOME/Downloads
+echo "Create: ${GREEN}$HOME/Documents${NC}" && mkdir -p $HOME/Documents
+
+## Development Directories
+echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code"
+echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Webdev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Webdev"
+echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Webdev/www" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Webdev/www"
+echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Windev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Windev"
+echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Mobildev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Mobildev"
+echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/CLIdev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/CLIdev"
+echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Gamedev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Gamedev"
+
+## Node Directories
+echo "Create: ${GREEN}/usr/local/lib/node_modules${NC}" && sudo mkdir -p /usr/local/lib/node_modules
+
+## Symlinks
 echo "Symlink: bashrc" && ln -nf $HOME/dotfiles/zsh/bashrc $HOME/.bashrc
 echo "Symlink: zshrc" && ln -nf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 echo "Symlink: oh-my-env" && ln -nf $HOME/dotfiles/zsh/oh-my-env.sh $HOME/.oh-my-env.sh
 echo "Symlink: gitconfig" && ln -nf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
-echo ""
-echo ""
+echo "\n"
+
 cd $HOME
 
 
 # Node
 prompt "Install NodeJS / NPM / Basic Web development Packages"
-sudo apt install nodejs
-sudo apt install npm
-sudo mkdir -p /usr/local/lib/node_modules
+[ ! -x "$(command -v node)" ] && sudo apt install nodejs
+[ ! -x "$(command -v npm)" ] && sudo apt install npm
 sudo npm install -g sass
 sudo npm install -g typescript
 sudo npm install -g webpack
@@ -92,7 +116,7 @@ sudo npm install -g @vue/cli
 
 # Install Neovim + Setup KemmojoVim
 prompt "Install Neovim & KemmojoVim-Setup"
-sudo apt install neovim
+[ ! -x "$(command -v neovim)" ] && sudo apt install neovim
 echo "\n"
 curl -sL https://raw.githubusercontent.com/Kemmojo/KemojoVim/master/boot-KemojoVim.sh | sh
 
@@ -103,34 +127,35 @@ chsh -s /bin/zsh $USER
 
 
 # Install bat aka colored cat, aka cat with wings
-prompt "Install Bat (Cat with Wings)"
-mkdir -p $HOME/Downloads && cd $HOME/Downloads/
-wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
-sudo dpkg -i bat_0.12.1_amd64.deb
-rm bat_0.12.1_amd64.deb
-cd $HOME
+if ! [ -x "$(command -v bat)" ]; then
+  prompt "Install Bat (Cat with Wings)"
+  cd $HOME/Downloads
+  wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
+  sudo dpkg -i bat_0.12.1_amd64.deb
+  rm bat_0.12.1_amd64.deb
+  cd $HOME
+fi
 
 
 # Install fzf
-prompt "Install fzf"
-cd $HOME/Downloads
-wget https://github.com/junegunn/fzf-bin/releases/download/0.18.0/fzf-0.18.0-linux_amd64.tgz && tar -xzf fzf-0.18.0-linux_amd64.tgz
-sudo mv fzf /usr/local/bin
-rm fzf-0.18.0-linux_amd64.tgz
+if ! [ -x "$(command -v fzf)" ]; then
+  prompt "Install fzf"
+  cd $HOME/Downloads
+  wget https://github.com/junegunn/fzf-bin/releases/download/0.18.0/fzf-0.18.0-linux_amd64.tgz && tar -xzf fzf-0.18.0-linux_amd64.tgz
+  sudo mv fzf /usr/local/bin
+  rm fzf-0.18.0-linux_amd64.tgz
+  cd $HOME
+fi
 
 
 # Install LAMP Setup
-# TODO: Finish LAMP + Composer + Laravel installation + fancy-index
 ## Install Base
-prompt "Install Lamp-Server"
-mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code"
-mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev"
-mkdir -p "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www"
-# sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install tasksel
+prompt "Install Webserver ( Lamp )"
+sudo apt-get update && sudo apt-get upgrade
+[ ! -x "$(command -v tasksel)" ] && sudo apt-get install tasksel
 sudo tasksel install lamp-server
 sudo rm -R /var/www/html
-sudo ln -s "/mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')/Code/Webdev/www" /var/www/html
+sudo ln -s "/mnt/c/Users/$WINDOWSUSER/Code/Webdev/www" /var/www/html
 sudo apt-get install php-zip
 
 ## Install XDebug
@@ -141,30 +166,36 @@ sudo bash -c "echo 'xdebug.remote_enable = 1' >> /etc/php/7.2/apache2/php.ini"
 sudo bash -c "echo 'xdebug.remote_autostart = 1' >> /etc/php/7.2/apache2/php.ini"
 
 ## Install Fance Index
-prompt "Install Fancy-Index"
-cd /var/www/html && git clone https://github.com/Vestride/fancy-index.git
-sudo mv /var/www/html/fancy-index/.htaccess /var/www/html
-sudo bash -c "echo '<Directory /var/www/html/>' >> /etc/apache2/apache2.conf"
-sudo bash -c "echo '    AllowOverride All' >> /etc/apache2/apache2.conf"
-sudo bash -c "echo '    Options Indexes MultiViews FollowSymLinks' >> /etc/apache2/apache2.conf"
-sudo bash -c "echo '    Require all granted' >> /etc/apache2/apache2.conf"
-sudo bash -c "echo '</Directory>' >> /etc/apache2/apache2.conf"
+if [ -d "/var/www/html/fancy-index" ]; then
+  prompt "Install Fancy-Index"
+  cd /var/www/html && git clone https://github.com/Vestride/fancy-index.git
+  sudo mv /var/www/html/fancy-index/.htaccess /var/www/html
+  sudo bash -c "echo '<Directory /var/www/html/>' >> /etc/apache2/apache2.conf"
+  sudo bash -c "echo '    AllowOverride All' >> /etc/apache2/apache2.conf"
+  sudo bash -c "echo '    Options Indexes MultiViews FollowSymLinks' >> /etc/apache2/apache2.conf"
+  sudo bash -c "echo '    Require all granted' >> /etc/apache2/apache2.conf"
+  sudo bash -c "echo '</Directory>' >> /etc/apache2/apache2.conf"
+fi
 
 ## Composer
-prompt "Install Composer"
-cd $HOME/Downloads
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-sudo mv composer.phar /usr/local/bin/composer
+if ! [ -x "$(command -v composer)" ]; then
+  prompt "Install Composer"
+  cd $HOME/Downloads
+  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  php composer-setup.php
+  php -r "unlink('composer-setup.php');"
+  sudo mv composer.phar /usr/local/bin/composer
+  cd $HOME
+fi
 
 ## Laravel
-prompt "Install Laravel"
-composer global require laravel/installer
-
+if ! [ -x "$(command -v laravel)" ]; then
+  prompt "Install Laravel"
+  composer global require laravel/installer
+fi
 
 # Finish
 prompt "Installtion done"
-echo "Dude... \n\n\n"
-echo "Have Fun. :)"
+echo "Dude... \n\n"
+echo "Have Fun. :)\n"
