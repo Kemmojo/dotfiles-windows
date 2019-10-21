@@ -4,7 +4,7 @@
 # What do you need
 - [3GB of diskspace](https://i.imgur.com/LUHzYMn.png)
 
-# For whom does this setup fit
+# For whom will this setup
 Consider programs included in this setup try to satify the needs of:
 - [Gamer](https://en.wikipedia.org/wiki/Gamer)
     - [Steam](https://store.steampowered.com/)
