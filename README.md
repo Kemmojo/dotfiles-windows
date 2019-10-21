@@ -1,7 +1,7 @@
 # dotfiles-windows
 [Windoof!](https://www.stupidedia.org/stupi/Windoof) If something breaks and you need to reinstall, take my Setting, i will try to keep things as simple as [eating cheese cake](https://i.pinimg.com/originals/5c/8f/c3/5c8fc30be38ef08fc67ca8a963501986.jpg).
 
-# What you need
+# What do you need
 - [3GB of diskspace](https://i.imgur.com/LUHzYMn.png)
 
 # For whom does this setup fit
