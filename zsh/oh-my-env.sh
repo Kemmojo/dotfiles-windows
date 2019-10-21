@@ -6,16 +6,16 @@
     
 
 # ----- Exports ----------------------------------------------------------------
-    export WINUSERNAME="$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')"
-    export WINHOME="/mnt/c/Users/$WINUSERNAME"
-    export CODEENV="/mnt/c/Users/$WINUSERNAME/Code"
+    export WINDOWSUSERNAME="$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')"
+    export WINHOME="/mnt/c/Users/${WINDOWSUSERNAME}"
+    export CODEENV="/mnt/c/Users/${WINDOWSUSERNAME}/Code"
 
 
-# ----- Source ----------------------------------------------------------------
+# ----- Sources ----------------------------------------------------------------
 
 
 
-# ----- Startup ----------------------------------------------------------------
+# ----- Startups ----------------------------------------------------------------
     # Start Webservices if offline
     [ "$(service apache2 status)" = " * apache2 is not running" ] && {sudo service mysql restart; sudo service apache2 restart}
 
@@ -60,9 +60,53 @@
         function webserver-restart() { sudo service mysql restart && sudo service apache2 restart }
 
     # ------Enviroment Help ----------------------------------------------------
-        # TODO: Write it
         function envhelp() {
-            echo "envhelp comming..."
+            # Print No Color
+            RED='\033[0;31m'
+            GREEN='\033[0;32m'
+            BLUE='\033[0;34m'
+            NC='\033[0m' # No Color
+
+            echo "\nenvhelp(1)"
+            echo ""
+            echo "${GREEN}oh-my-env.sh${NC}"
+            echo ""
+            echo "${RED}EXPORTS${NC}"
+            echo "\t${RED}\$WINDOWSUSERNAME${NC}\t Windows username \t\t\t${WINDOWSUSERNAME}"
+            echo "\t${RED}\$WINHOME${NC}\t\t Path to windows user directory \t${WINHOME}"
+            echo "\t${RED}\$CODEENV${NC}\t\t Path to Code direcoty \t\t\t${CODEENV}"
+            echo ""
+            echo "${RED}SOURCES${NC}"
+            echo ""
+            echo "${RED}STARTUPS${NC}"
+            echo "\t${RED}apache2${NC} and ${RED}mysql${NC}"
+            echo ""
+            echo "${RED}ALIASES${NC}"
+            echo "\t${RED}zshconfig${NC}\t\t Opens VSCode with your ${GREEN}.zshrc${NC}"
+            echo "\t${RED}envconfig${NC}\t\t Opens VSCode with your ${GREEN}.oh-my-env.sh${NC}"
+            echo "\t${RED}vimconfig${NC}\t\t Opens VSCode with your ${GREEN}.KemojoVim directory${NC}"
+            echo "\t${RED}dotconfig${NC}\t\t Opens VSCode with your ${GREEN}dotfiles directory${NC}"
+            echo ""
+            echo "\t${RED}zshreload${NC}\t\t Reloads your zsh configuration"
+            echo ""
+            echo "\t${RED}grep${NC}\t\t\t Adds colors to ${GREEN}grep${NC}"
+            echo ""
+            echo "\t${RED}vi${NC}\t\t\t Opens ${GREEN}Neovim${NC} in your Terminal"
+            echo "\t${RED}v${NC}\t\t\t Opens ${GREEN}Neovim${NC} in your Terminal"
+            echo "\t${RED}vi${NC}\t\t\t Opens ${GREEN}Vim${NC} in your Terminal"
+            echo ""
+            echo "\t${RED}cat${NC}\t\t\t Instead of ${GREEN}cat${NC} ${GREEN}bat${NC} is called"
+            echo ""
+            echo "\t${RED}npm${NC}\t\t\t ${GREEN}NPM${NC} will be called as ${GREEN}root${NC}"
+            echo ""
+            echo "${RED}FUNCTIONS${NC}"
+            echo "\t${RED}f()${NC}\t\t\t ${RED}find${NC} [${BLUE}args...${NC}]"
+            echo "\t${RED}f-dir()${NC}\t\t\t ${RED}find${NC} [ ${RED}-type d${NC} ] [${BLUE}args...${NC}]"
+            echo "\t${RED}r()${NC}\t\t\t ${RED}grep${NC} [${BLUE}args...${NC}] [ ${RED}-R${NC} ]"
+            echo ""
+            echo "\t${RED}webserver-start()${NC}\t Start ${RED}apache2${NC} and ${RED}mysql${NC} services"
+            echo "\t${RED}webserver-restart()${NC}\t Restart ${RED}apache2${NC} and ${RED}mysql${NC} services"
+            echo "\t${RED}webserver-stop()${NC}\t Stop ${RED}apache2${NC} and ${RED}mysql${NC} services"
         }
 
 

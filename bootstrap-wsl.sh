@@ -1,11 +1,10 @@
 #!/bin/sh
 set -e
 
-# TODOs:
-## TODO: Get PHP Variable, for Versioning
-
 # Global Vars
 WINDOWSUSER="$(/mnt/c/Windows/System32/cmd.exe /c 'echo %USERNAME%' | sed -e 's/\r//g')"
+WINDOWS_HOME="/mnt/c/Users/$WINDOWSUSER"
+HOME_ZSH_PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
 
 # Print No Color
 RED='\033[0;31m'
@@ -14,27 +13,28 @@ NC='\033[0m' # No Color
 
 # Promp function
 prompt() {
-  echo "\n\n# ------ ${GREEN} ${1} ${NC} ----------------------------------------------------"
+  echo "\n\n# ------ ${GREEN}${1}${NC} ----------------------------------------------------"
 }
-
 
 
 # Update Ubuntu
 cd $HOME
 sudo apt-get update
 
-  # Install 
+
+# Install ZSH 
 if ! [ -x "$(command -v zsh)" ]; then
   prompt "Install ZSH"
   sudo apt-get install zsh
 fi
-  # Git
+
+# InstallGit
 if ! [ -x "$(command -v git)" ]; then
   prompt "Install Git"
   sudo apt-get install git
 fi
   
-  # Oh-My_Zsh Installation
+# Oh-My_Zsh Installation
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   prompt "Install oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -44,35 +44,33 @@ fi
 # ZSH Setup
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
   prompt "Install zsh-completions"
-  git clone https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions
+  git clone https://github.com/zsh-users/zsh-completions $HOME_ZSH_PLUGINS_DIR/zsh-completions
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
   prompt "Install zsh-syntax-highlighting Plugin"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME_ZSH_PLUGINS_DIR/zsh-syntax-highlighting
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized" ]; then
   prompt "Install zsh dir-colours plugin"
-  git clone --recursive -j8 git://github.com/joel-porquet/zsh-dircolors-solarized $HOME/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized
+  git clone --recursive -j8 git://github.com/joel-porquet/zsh-dircolors-solarized $HOME_ZSH_PLUGINS_DIR/zsh-dircolors-solarized
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-256color" ]; then
   prompt "Install 256color ZSH Plugin"
-  git clone https://github.com/chrissicool/zsh-256color $HOME/.oh-my-zsh/custom/plugins/zsh-256color
+  git clone https://github.com/chrissicool/zsh-256color $HOME_ZSH_PLUGINS_DIR/zsh-256color
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/solarized-man" ]; then
   prompt "Install solarized-man"
-  git clone https://github.com/zlsun/solarized-man.git $HOME~/.oh-my-zsh/custom/plugins/solarized-man
+  git clone https://github.com/zlsun/solarized-man.git $HOME_ZSH_PLUGINS_DIR/solarized-man
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
   prompt "Install Autosuggestions"
-  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME_ZSH_PLUGINS_DIR/zsh-autosuggestions
 fi
-
-# Invoke ls colors
 
 
 # Symlink dotfiles
@@ -82,13 +80,13 @@ echo "Create: ${GREEN}$HOME/Downloads${NC}" && mkdir -p $HOME/Downloads
 echo "Create: ${GREEN}$HOME/Documents${NC}" && mkdir -p $HOME/Documents
 
 ## Development Directories
-echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code"
-echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Webdev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Webdev"
-echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Webdev/www" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Webdev/www"
-echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Windev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Windev"
-echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Mobildev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Mobildev"
-echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/CLIdev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/CLIdev"
-echo "Create: ${GREEN}/mnt/c/Users/$WINDOWSUSER/Code/Gamedev${NC}" && mkdir -p "/mnt/c/Users/$WINDOWSUSER/Code/Gamedev"
+echo "Create: ${GREEN}$WINDOWS_HOME/Code${NC}" && mkdir -p "$WINDOWS_HOME/Code"
+echo "Create: ${GREEN}$WINDOWS_HOME/Code/Webdev${NC}" && mkdir -p "$WINDOWS_HOME/Code/Webdev"
+echo "Create: ${GREEN}$WINDOWS_HOME/Code/Webdev/www" && mkdir -p "$WINDOWS_HOME/Code/Webdev/www"
+echo "Create: ${GREEN}$WINDOWS_HOME/Code/Windev${NC}" && mkdir -p "$WINDOWS_HOME/Code/Windev"
+echo "Create: ${GREEN}$WINDOWS_HOME/Code/Mobildev${NC}" && mkdir -p "$WINDOWS_HOME/Code/Mobildev"
+echo "Create: ${GREEN}$WINDOWS_HOME/Code/CLIdev${NC}" && mkdir -p "$WINDOWS_HOME/Code/CLIdev"
+echo "Create: ${GREEN}$WINDOWS_HOME/Code/Gamedev${NC}" && mkdir -p "$WINDOWS_HOME/Code/Gamedev"
 
 ## Node Directories
 echo "Create: ${GREEN}/usr/local/lib/node_modules${NC}" && sudo mkdir -p /usr/local/lib/node_modules
@@ -99,7 +97,6 @@ echo "Symlink: zshrc" && ln -nf $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
 echo "Symlink: oh-my-env" && ln -nf $HOME/dotfiles/zsh/oh-my-env.sh $HOME/.oh-my-env.sh
 echo "Symlink: gitconfig" && ln -nf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
 echo "\n"
-
 cd $HOME
 
 
@@ -155,15 +152,15 @@ sudo apt-get update && sudo apt-get upgrade
 [ ! -x "$(command -v tasksel)" ] && sudo apt-get install tasksel
 sudo tasksel install lamp-server
 sudo rm -R /var/www/html
-sudo ln -s "/mnt/c/Users/$WINDOWSUSER/Code/Webdev/www" /var/www/html
+sudo ln -s "$WINDOWS_HOME/Code/Webdev/www" /var/www/html
 sudo apt-get install php-zip
 
 ## Install XDebug
 prompt "Install PHP-XDebug"
 sudo apt-get install php-xdebug
-sudo bash -c "echo '[XDebug]' >> /etc/php/7.2/apache2/php.ini"
-sudo bash -c "echo 'xdebug.remote_enable = 1' >> /etc/php/7.2/apache2/php.ini"
-sudo bash -c "echo 'xdebug.remote_autostart = 1' >> /etc/php/7.2/apache2/php.ini"
+sudo bash -c "echo '[XDebug]' >> /etc/php/*/apache2/php.ini"
+sudo bash -c "echo 'xdebug.remote_enable = 1' >> /etc/php/*/apache2/php.ini"
+sudo bash -c "echo 'xdebug.remote_autostart = 1' >> /etc/php/*/apache2/php.ini"
 
 ## Install Fance Index
 if [ -d "/var/www/html/fancy-index" ]; then
@@ -195,7 +192,20 @@ if ! [ -x "$(command -v laravel)" ]; then
   composer global require laravel/installer
 fi
 
+
 # Finish
 prompt "Installtion done"
-echo "Dude... \n\n"
+echo "Dude... Thanks for waiting. \n\n"
 echo "Have Fun. :)\n"
+echo "\n\n"
+echo "Here some things you might want to check out:"
+echo "- Adobe Photoshop: https://www.adobe.com/de/products/photoshop.html"
+echo "- Adobe XD: https://www.adobe.com/products/xd.html#"
+echo "- Affinity Photo: https://affinity.serif.com/en-gb/photo/"
+echo "- Flowkey: https://www.flowkey.com/en"
+echo "- XING: https://faq.xing.com/de/windows/xing-app-f%C3%BCr-windows-10-herunterladen"
+echo "- FL Studio: https://www.image-line.com/flstudio"
+echo "- ICUE: https://www.corsair.com/de/de/icue"
+echo "- Alesis V61 Editor: https://www.alesis.com/products/legacy/v61"
+
+

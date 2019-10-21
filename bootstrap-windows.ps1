@@ -245,7 +245,6 @@ Start-Process powershell -ArgumentList "-command $installation_block"
 ################################
 ## Outro                      ##
 ################################
-# TODO: Download Applications from Sources
 echo ""
 echo "Things you have to install manually:"
 echo " - Twitch"

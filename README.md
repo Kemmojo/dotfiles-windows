@@ -1,131 +1,131 @@
 # dotfiles-windows
-Windoof, if something breaks and you need to reinstall, take my Setting, i will try to keep it as simple as eating cheese cake.
+[Windoof!](https://www.stupidedia.org/stupi/Windoof) If something breaks and you need to reinstall, take my Setting, i will try to keep things as simple as [eating cheese cake](https://i.pinimg.com/originals/5c/8f/c3/5c8fc30be38ef08fc67ca8a963501986.jpg).
 
 # What you need
-- 3GB of diskspace
+- [3GB of diskspace](https://i.imgur.com/LUHzYMn.png)
 
 # For whom does this setup fit
 Consider programs included in this setup try to satify the needs of:
-- Gamer
-    - Steam
-    - Epic Games
-    - Maybe Streamer
-- Developer
-    - Webdeveloper(especially PHP-Developer)
-    - CLI-Developer
-    - Android Developer
-    - Gamedeveloper
-- Someone Writing needs on an academic level
-    - Texmaker
-    - Joplin
-    - Libre Office
+- [Gamer](https://en.wikipedia.org/wiki/Gamer)
+    - [Steam](https://store.steampowered.com/)
+    - [Epic Games](https://www.epicgames.com/store/en-US/)
+    - Maybe [Streamer](https://www.twitch.tv/)
+- [Developer](http://devhumor.com/)
+    - Webdeveloper (Especially [PHP-Developer](https://www.php.net/))
+    - [CLI-Developer](https://devhints.io/bash)
+    - [Android Developer](https://developer.android.com/about/versions/10?gclid=EAIaIQobChMIt6q6jY6u5QIVleh3Ch13VQASEAAYASAAEgLWz_D_BwE)
+    - [Game Developer](https://unity.com/)
+- Academic Writer
+    - [Texmaker](https://www.xm1math.net/texmaker/)
+    - [Joplin](https://github.com/laurent22/joplin)
+    - [Libre Office](https://www.libreoffice.org/)
 
 
-# So what is getting installed? ( TODO: Link Stuff )
-## Windows-Setup0
+# So what is getting installed?
+## Windows-Setup
 - **Fonts**
-    - firacode
-    - sourcecodepro
+    - [firacode](https://github.com/tonsky/FiraCode)
+    - [sourcecodepro](https://github.com/adobe-fonts/source-code-pro)
 - **Browser**
-    - Firefox
-    - Google Chrome
-    - Opera
+    - [Firefox](https://www.mozilla.org/en-US/firefox/)
+    - [Google Chrome](https://www.google.de/chrome/)
+    - [Opera](https://www.opera.com/)
 - **Essentials**
-    - Keepass
-    - 7zip
-    - 7zip.commandline
-    - Winrar
-    - Filezilla
-    - Rufus
+    - [Keepass](https://www.cp-lab.com/)
+    - [7zip](https://www.7-zip.org/)
+    - [7zip.commandline](https://www.7-zip.org/)
+    - [Winrar](https://www.win-rar.com)
+    - [Filezilla](https://filezilla-project.org/)
+    - [Rufus](https://rufus.ie/)
 - **Multimedia**
-    - Youtube-dl
-    - Vlc
-    - Spotify
+    - [Youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html)
+    - [Vlc](https://www.videolan.org/vlc/index.html)
+    - [Spotify](https://www.spotify.com)
 - **Security**
-    - Malwarebytes
+    - [Malwarebytes](https://www.malwarebytes.com)
 - **Gaming & Communication**
-    - Steam
-    - OBS-Studio
-    - Streamlabs OBS
-    - Teamspeak
-    - Discord
-    - Whatsapp Desktop
-    - Epic Games Launcher
-    - Origin Launcher
+    - [Steam](https://store.steampowered.com/)
+    - [OBS-Studio](https://obsproject.com/)
+    - [Streamlabs OBS](https://streamlabs.com/)
+    - [Teamspeak](https://www.teamspeak.com)
+    - [Discord](https://discordapp.com/)
+    - [Whatsapp Desktop](https://www.whatsapp.com/download/)
+    - [Epic Games Launcher](https://www.epicgames.com/store/en-US/)
+    - [Origin Launcher](https://www.origin.com)
 - **Note taking**
-    - Joplin
+    - [Joplin](https://github.com/laurent22/joplin)
 - **Mail-Client**
-    - Thunderbird
+    - [Thunderbird](https://www.thunderbird.net)
 - **Clouds**
-    - Dropbox
-    - Google Drive
+    - [Dropbox](https://www.dropbox.com)
+    - [Google Drive](https://www.google.com/drive/)
 - **Office**
-    - libreoffice-fresh
+    - [libreoffice-fresh](https://www.libreoffice.org/)
 - **Torrenting**
-    - utorrent
-    - jdownloader
+    - [utorrent](https://www.utorrent.com/)
+    - [jdownloader](http://jdownloader.org/)
 - **Music development**
-    - Audacity
+    - [Audacity](https://www.audacityteam.org/)
 - **PDF Reader**
-    - Adobe Acrobatreader
+    - [Adobe Acrobatreader](https://get.adobe.com/uk/reader/)
 - **Virtual Machines**
-    - Virtualbox
+    - [Virtualbox](https://www.virtualbox.org)
 - **Academic Paper creation**
-    - Texmaker
+    - [Texmaker](https://www.xm1math.net/texmaker/)
 - **Gamedevelopment**
-    - Unity
-    - Blender
+    - [Unity](https://unity.com/)
+    - [Blender](https://www.blender.org/)
 - **Developent**
-    - git
-    - git-credential-manager-for-windows
-    - Javaruntime
-    - Java Jdk
-    - Android Studio
-    - Postman
+    - [git](https://git-scm.com/)
+    - [git-credential-manager-for-windows](https://github.com/microsoft/Git-Credential-Manager-for-Windows)
+    - [Javaruntime](https://www.java.com/en/download/)
+    - [Java Jdk](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html)
+    - [Android Studio](https://developer.android.com/studio/?gclid=EAIaIQobChMInfyzypGu5QIVAqqaCh0_ZgHZEAAYASAAEgLWXPD_BwE)
+    - [Postman](https://www.getpostman.com/)
 - **Sysadmin**
-    - Teamviewer
-    - nmap
-    - Wireshark
+    - [Teamviewer](https://www.teamviewer.com)
+    - [nmap](https://nmap.org/)
+    - [Wireshark](https://www.wireshark.org/)
 - **Editor & IDEs**
-    - Neovim
-    - Visual-Studio-Code
-    - Visual-Studio-Code-insiders
-    - Sublimetext3
+    - [Neovim](https://neovim.io/)
+    - [Visual-Studio-Code](https://code.visualstudio.com/)
+    - [Visual-Studio-Code-insiders](https://code.visualstudio.com/insiders/)
+    - [Sublimetext3](https://www.sublimetext.com/3)
 
 
 ## Design Tools
-Unfortunatly Programs like **Photoshop**, or **Afinity Photo** are excluded
-from this setup, because their unavailable for free download.
+Unfortunatly Programs like **[Photoshop](https://www.adobe.com/de/products/photoshop.html)**, or **[Afinity Photo](https://affinity.serif.com/en-gb/photo)** are excluded
+from [this setup](https://github.com/Kemmojo/dotfiles-windows), because their [unavailable for free download](https://www.mememaker.net/api/bucket?path=static/img/memes/full/2017/Mar/8/15/one-does-not-simply-get-things-for-free.jpg).
 
 ## WSL-Setup
-- **ConEmu**
-- **ZSH**
-    - oh-my-zsh
-        - zsh-completions
-        - zsh-syntax-highlighting
-        - zsh-dircolors-solarized
-        - zsh-256color
-        - solarized-man
-        - zsh-autosuggestions
-    - bat
-    - fzf
-- **Neovim + KemmojoVim (My personal setup)**
-- **LAMP ( Linux / Apache / MySQL / PHP )**
-    - php@7.2
-    - fancy-index
-    - X-Debug
-    - Composer
-    - Laravel
-- **Node/NPM**
-    - Sass
-    - Typescript
-    - webpack
-    - webpack-cli
-    - Vue-cli
+- **[ConEmu](https://conemu.github.io/)**
+- **[ZSH](https://en.wikipedia.org/wiki/Z_shell)**
+    - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+        - [zsh-completions](https://github.com/zsh-users/zsh-completions)
+        - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+        - [zsh-dircolors-solarized](https://github.com/joel-porquet/zsh-dircolors-solarized)
+        - [zsh-256color](https://github.com/chrissicool/zsh-256color)
+        - [solarized-man](https://github.com/zlsun/solarized-man)
+        - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+    - [bat](https://github.com/sharkdp/bat)
+    - [fzf](https://github.com/junegunn/fzf)
+- **[Neovim](https://neovim.io/) + [KemmojoVim](https://github.com/Kemmojo/KemojoVim) (My personal setup)**
+- **[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) ( Linux / Apache / MySQL / PHP )**
+    - [php@7.2](https://www.php.net/)
+    - [fancy-index](https://github.com/Vestride/fancy-index)
+    - [X-Debug](https://xdebug.org/)
+    - [Composer](https://getcomposer.org/)
+    - [Laravel](https://laravel.com/)
+- **[Node](https://nodejs.org) / [NPM](https://www.npmjs.com/)**
+    - [Sass](https://sass-lang.com/)
+    - [Typescript](https://www.typescriptlang.org/)
+    - [Webpack](https://webpack.js.org/)
+    - [webpack-cli](https://webpack.js.org/api/cli/)
+    - [Vue-cli](https://cli.vuejs.org/)
 
 
 # Partitioning & Locations ( Recommandation )
-**Short Disclaimer:** I love organisation and hate to search my butt flat,
+**Short Disclaimer:** I [love organisation](http://i.imgur.com/VMe5AvZ.jpg) and hate to search my butt flat,
 So this Setup recommands a subjective architecture, which might not hit your needs.
 
 - **C:** (Place for: )
@@ -140,7 +140,7 @@ So this Setup recommands a subjective architecture, which might not hit your nee
 Apache2- and MySQL-Services are initiated on ConEmu startup.
 
 ## Interaction
-In the `oh-my-env.sh` in your Ubuntu `$HOME` directory you find functions which **start**, **restart** and **stop** the installed **apache2** and **mysql** server.
+In the `oh-my-env.sh` in your Ubuntu `$HOME` directory you find functions which **start**, **restart** and **stop** the installed **[apache2](https://httpd.apache.org/)** and **[mysql](https://www.mysql.com/)** server.
 - `webserver-start`
 - `webserver-restart`
 - `webserver-stop`
@@ -159,15 +159,16 @@ You ma recognize that the usual Directory-Indexing desing looks different, this 
 
 # After a fresh installtion
 1. Update your System to the highest
-2. ( If **Nvidia** ) Download **[Nvidia Geforce Experience](https://www.geforce.com/geforce-experience/download)**
+2. ( If **[Nvidia](https://www.nvidia.com)** ) Download **[Nvidia Geforce Experience](https://www.geforce.com/geforce-experience/download)**
     - Install newest drivers
 3. Go to ‘Settings’ -> ‘Update and Security’ -> ‘For developers’: Enable ‘Developer mode’
 4. Execute the **Windows Download & Execute bootstrap command** below
 5. Execute `bootstrap-windows.ps1` in `powershell.exe` as Admin
 6. Install **Ubuntu** from the **Microsoft App**
+7. Run **Ubuntu**, you will be asked to create user. Close **Ubuntu** after the creating a user. 
 7. Make sure that your clock is in sync with th global clock, otherwise ubuntu updates will fail
     - You can do this in your bios
-8. Start **ConEmu**
+8. Run **ConEmu**
     1. Make sure the **Command** textbox contains something simular to this:
         - ```set "PATH=%ConEmuBaseDirShort%\wsl;%PATH%" & %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -cur_console:pm:/mnt```
     2. The Ubuntu bash shell should be started
